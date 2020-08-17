@@ -26,11 +26,11 @@ function processFirstItem(stringList, callback) {
 /* Task 1: `counterMaker`
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
- * 1. What is the difference between counter1 and counter2?
+ * 1. What is the difference between counter1 and counter2? One is block scoped and the other is function scoped
  * 
- * 2. Which of the two uses a closure? How can you tell?
+ * 2. Which of the two uses a closure? How can you tell? the first one because of the return within the funtion. 
  * 
- * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? if we were to ever need to call upon counterMaker anywhere else its good to be outside of the function.
  *
 */
 
@@ -112,34 +112,31 @@ and returns the score at each pont in the game, like so:
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(cb, numOfInnings){
-  let homeInningScores = []
-  let awayInningScores = []
-  for (let i = 1; i < (numOfInnings+1); i++){
-    homeInningScores.push(cb(2));
-    awayInningScores.push(cb(2));
-  }
+function scoreboard(getInningScore, numOfInnings){
+
+
+
   function getInningScore(cb, numOfInnings) {
     let homeInningScores = []
     let awayInningScores = []
-    for (let b =1; b<=numOfInnings; b++){
+      for (let b =1; b<=numOfInnings; b++){
         homeInningScores.push(cb());
         awayInningScores.push(cb());
-    }
+  }
     console.log(homeInningScores);
     console.log(awayInningScores);
-
 }
+
+  for(i = 0; i < numOfInnings; i++) {
+    console.log(`Inning ${numOfInnings+1}: ${awayInningScores[i]} - ${homeInningScores[i]}`)
+   }
+  
 }
-scoreboard(getInningScore, inning,);
+  
+console.log(scoreboard(inning, getInningScore, 19));
 
 
 
 
 
-
-
-
-
-// console.log(getInningScore(inning,9));
 

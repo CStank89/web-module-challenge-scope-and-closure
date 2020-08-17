@@ -64,9 +64,9 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+a. Where is closure used in this code? How can you tell?  at the reutrn function 
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change? the name will stay the same while the number retujrned will be newRoll which is a random number generator. 
+c. What is the lexical scope of `newRoll`?  the lexical scope of newroll is that its nested withing a variable within a function thats not invoked until the return
 
 ### Task 2c - Exit Ticket
 
