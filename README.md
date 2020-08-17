@@ -42,6 +42,8 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+    This gives us the ability to acces functions from a parent level schop in a child level scope.  With that in mind we can only work downwards never back up.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -62,9 +64,9 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+a. Where is closure used in this code? How can you tell?  at the reutrn function 
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change? the name will stay the same while the number retujrned will be newRoll which is a random number generator. 
+c. What is the lexical scope of `newRoll`?  the lexical scope of newroll is that its nested withing a variable within a function thats not invoked until the return
 
 ### Task 2c - Exit Ticket
 
