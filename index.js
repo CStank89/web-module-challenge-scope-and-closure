@@ -112,30 +112,32 @@ and returns the score at each pont in the game, like so:
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(){
-  let homeInningScores = getInningScore(numOfInnings, 9);
-  let awayInningScores = getInningScore(numOfInnings, 9);
-  let homeTotal = homeInningScores.reduce(function(a,b){return a+b});
-  let awayTotal = awayInningScores.reduce(function(a,b) {return a+b});
 
-  console.log(`Final Score - Away: ${awayTotal} Home: ${homeTotal}]`)
-
-
-  function getInningScore(cb, numOfInnings) {
-    let homeInningScores = []
-    let awayInningScores = []
-      for (let b =1; b<=numOfInnings; b++){
-        homeInningScores.push(cb());
-        awayInningScores.push(cb());
-  }
-    console.log(homeInningScores);
-    console.log(awayInningScores);
+function getInningScore(inning, numOfInnings) {
+  var inningScores = [];
+  for (let i = 0; i < numOfInnings; i++){
+        inningScores.push(inning());
+    }
+  return inningScores;
 }
-}  
 
 
-scoreboard();
+function scoreboard(inning, getInningScore, numOfInnings) {
+  var awayInningScores = getInningScore(inning, numOfInnings);
+  var homeInningScores = getInningScore(inning, numOfInnings);
+  var finalScoreAway = 0;
+  var finalScoreHome = 0;
+    for(let i = 0; i < numOfInnings; i++) {
+      finalScoreAway += awayInningScores[i];
+      finalScoreHome += homeInningScores[i];
+    console.log(`Inning ${i+1}: ${awayInningScores[i]} - ${homeInningScores[i]}`)
+      if( i === numOfInnings - 1) {
+        console.log(`Final Score: Home:  ${finalScoreHome}, Away: ${finalScoreAway}`)
+      }
+   }
+}
 
+scoreboard(inning,getInningScore, 9);
 
 
 
