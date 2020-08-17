@@ -42,6 +42,8 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+    This gives us the ability to acces functions from a parent level schop in a child level scope.  With that in mind we can only work downwards never back up.
+
 2. Study the following code, then answer the questions below.
 
 ```js

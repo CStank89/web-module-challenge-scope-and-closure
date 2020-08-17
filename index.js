@@ -35,32 +35,36 @@ function processFirstItem(stringList, callback) {
 */
 
 // counter1 code
-function counterMaker() {
-  let count = 0;
-  return function counter() {
-   return count++;
-  }
-}
+// function counterMaker() {
+//   let count = 0;
+//   return function counter() {
+//    return count++;
+//   }
+// }
 
-const counter1 = counterMaker();
+// const counter1 = counterMaker();
 
-// counter2 code
-let count = 0;
+// // counter2 code
+// let count = 0;
 
-function counter2() {
-  return count++;
-}
+// function counter2() {
+//   return count++;
+// }
 
 
 /* Task 2: inning() 
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+  
+     function inning(max){
+        return Math.floor(Math.random() * Math.floor(max));
+       }
+    
+ 
+ console.log(inning(2));
 
-    /*Code Here*/
 
-}
 
 /* Task 3: finalScore()
 
