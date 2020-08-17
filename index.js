@@ -112,8 +112,13 @@ and returns the score at each pont in the game, like so:
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(getInningScore, numOfInnings){
+function scoreboard(){
+  let homeInningScores = getInningScore(inning, 9);
+  let awayInningScores = getInningScore(inning, 9);
+  let homeTotal = homeInningScores.reduce(function(a,b){return a+b});
+  let awayTotal = awayInningScores.reduce(function(a,b) {return a+b});
 
+  console.log(`Final Score - Away: ${awayTotal} Home: ${homeTotal}]`)
 
 
   function getInningScore(cb, numOfInnings) {
@@ -126,14 +131,10 @@ function scoreboard(getInningScore, numOfInnings){
     console.log(homeInningScores);
     console.log(awayInningScores);
 }
-
-  for(i = 0; i < numOfInnings; i++) {
-    console.log(`Inning ${numOfInnings+1}: ${awayInningScores[i]} - ${homeInningScores[i]}`)
-   }
   
 }
-  
-console.log(scoreboard(inning, getInningScore, 19));
+
+scoreboard();
 
 
 
